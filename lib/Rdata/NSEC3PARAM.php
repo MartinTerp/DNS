@@ -96,6 +96,7 @@ class NSEC3PARAM implements RdataInterface
      */
     public function getSalt(): string
     {
+        if ($this->salt == "-") return $this->salt;
         return bin2hex($this->salt);
     }
 
